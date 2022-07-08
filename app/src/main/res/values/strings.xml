@@ -2,7 +2,7 @@
     <string name="app_name">SummaryUI</string>
 
 
-        <string name="random_text_1">
+    <string name="random_text_1">
     Hadoop is a data processing tool used to process large size data over distributed
     commodity hardware. The trend of Big Data Hadoop market is on the boom and it’s
     not showing any kind of deceleration in its growth. Today, industries are capable
@@ -22,7 +22,7 @@
     and Big Data Technology. Companies are investing big in it and it will become
     an in-demand skill in the future.
   </string>
-        <string name="random_text_2">
+    <string name="random_text_2">
     Humans are coming closer to the internet at a very fast rate. It means that the
     volume of data Industries is gathering will increase as time passes because of
     more users. Industry’s are gradually analyzing the need for this useful information
@@ -39,7 +39,6 @@
     and Big Data Technology. Companies are investing big in it and it will become
     an in-demand skill in the future.
   </string>
-
 
 
 </resources>
