@@ -1,0 +1,785 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?actionBarSize"
+        android:background="@color/white"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imvToolBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fin_logo" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/l_green"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSummary"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:padding="16dp"
+                android:text="Summary"
+
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tvYourPortfolioValue"
+                app:layout_constraintEnd_toStartOf="@+id/tvPlanOfAction"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_margin="20dp"
+                android:background="#f9fff0"
+                android:textSize="36sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPlanOfAction"
+                app:layout_constraintEnd_toStartOf="@+id/tvPlanOfAction"
+                app:layout_constraintStart_toEndOf="@id/tvSummary"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPlanOfAction"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:padding="16dp"
+                android:text="Plan of Action"
+                android:textAlignment="textStart"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvSummary"
+                app:layout_constraintTop_toTopOf="@id/tvSummary" />
+
+
+            <TextView
+                android:id="@+id/tvYourPortfolioValue"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="26dp"
+                android:paddingBottom="15dp"
+                android:text="Your Portfolio Value"
+                android:textColor="@color/teal"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSummary" />
+
+            <TextView
+                android:id="@+id/tvPortfolioValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="₹ 3.94 L"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvYourPortfolioValue"
+                app:layout_constraintTop_toBottomOf="@id/tvYourPortfolioValue" />
+
+            <ImageView
+                android:id="@+id/ivPortFolioForwardIcon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="30dp"
+                android:padding="8dp"
+                android:scaleType="fitEnd"
+                android:src="@drawable/arrow_right"
+                app:layout_constraintBottom_toBottomOf="@id/tvPortfolioValue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvYourPortfolioValue"
+                app:layout_constraintTop_toBottomOf="@id/tvYourPortfolioValue"
+                app:tint="@color/yel_white" />
+
+            <ImageView
+                android:id="@+id/imvGoalDetail"
+                android:layout_width="match_parent"
+                android:layout_height="175dp"
+                android:foreground="@drawable/corners"
+                app:layout_constraintTop_toBottomOf="@id/tvPortfolioValue" />
+
+            <TextView
+                android:id="@+id/tvGoalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+
+                android:text="Goal"
+                android:textColor="@color/teal"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvYourPortfolioValue"
+                app:layout_constraintTop_toTopOf="@id/imvGoalDetail" />
+
+            <TextView
+                android:id="@+id/tvGoalAchieved1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="1"
+                android:textColor="@color/teal"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvGoalText"
+                app:layout_constraintTop_toBottomOf="@id/tvGoalText" />
+
+            <View
+                android:id="@+id/viewGoalValue"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="8dp"
+                android:background="@color/black"
+                app:layout_constraintBottom_toBottomOf="@id/tvGoalAchieved1"
+                app:layout_constraintEnd_toStartOf="@id/tvGoalAchieved2"
+                app:layout_constraintStart_toEndOf="@id/tvGoalAchieved1"
+                app:layout_constraintTop_toBottomOf="@id/tvGoalText" />
+
+            <TextView
+                android:id="@+id/tvGoalAchieved2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:text="3"
+                android:textColor="@color/teal"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/viewGoalValue"
+                app:layout_constraintTop_toBottomOf="@id/tvGoalText" />
+
+            <ImageView
+
+                android:id="@+id/imvGoalForwardIcon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:padding="5dp"
+                android:scaleType="fitEnd"
+                android:src="@drawable/arrow_right"
+                app:layout_constraintBottom_toBottomOf="@id/tvGoalAchieved1"
+                app:layout_constraintEnd_toEndOf="@id/ivPortFolioForwardIcon"
+                app:layout_constraintStart_toEndOf="@id/tvGoalAchieved1"
+                app:layout_constraintTop_toTopOf="@id/tvGoalAchieved1"
+                app:tint="@color/l_green" />
+
+            <View
+                android:id="@+id/viewBelowGoalValue"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#e5e8e2"
+                app:layout_constraintEnd_toEndOf="@id/imvGoalForwardIcon"
+                app:layout_constraintStart_toStartOf="@id/tvGoalAchieved1"
+                app:layout_constraintTop_toBottomOf="@id/imvGoalForwardIcon" />
+
+            <TextView
+                android:id="@+id/tvGoalName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="12sp"
+                android:padding="6.5dp"
+                android:text="Goal Name"
+                android:textColor="@color/teal"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvGoalValueRequired"
+                app:layout_constraintStart_toStartOf="@id/tvGoalAchieved1"
+                app:layout_constraintTop_toBottomOf="@id/viewBelowGoalValue" />
+
+            <TextView
+                android:id="@+id/tvGoalValueRequired"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+
+                android:padding="6.5dp"
+                android:text="Value Required"
+
+                android:textColor="@color/teal"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tvGoalName"
+                app:layout_constraintEnd_toEndOf="@id/imvGoalForwardIcon"
+                app:layout_constraintStart_toEndOf="@+id/tvGoalName"
+                app:layout_constraintTop_toTopOf="@+id/tvGoalName" />
+
+            <ImageView
+                android:id="@+id/imvDartArrow"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:paddingStart="10dp"
+                android:src="@drawable/darts"
+                app:layout_constraintEnd_toStartOf="@id/tvGoalName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvGoalName"
+                app:tint="@color/teal" />
+
+            <TextView
+                android:id="@+id/tvRetirementGoal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:padding="6.5dp"
+                android:text="Retirement Goal"
+                android:textColor="@color/teal"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvGoalValueRequired"
+                app:layout_constraintStart_toStartOf="@id/tvGoalName"
+                app:layout_constraintTop_toBottomOf="@id/tvGoalName" />
+
+
+            <TextView
+                android:id="@+id/tvRetirementGoalVal1"
+                android:layout_width="0dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="5dp"
+                android:text="₹ 54.38 L"
+                android:textAlignment="textStart"
+                android:textColor="@color/teal"
+                android:textSize="13sp"
+                android:textStyle="bold"
+
+                app:layout_constraintEnd_toEndOf="@id/tvGoalValueRequired"
+                app:layout_constraintStart_toEndOf="@+id/tvRetirementGoal"
+                app:layout_constraintTop_toBottomOf="@+id/tvGoalValueRequired" />
+
+            <TextView
+                android:id="@+id/tvRetirementGoalVal2"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="4dp"
+                android:text="₹ 0.00"
+                android:textAlignment="textStart"
+                android:textColor="@color/red"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/tvRetirementGoal"
+                app:layout_constraintTop_toBottomOf="@+id/tvRetirementGoalVal1" />
+
+            <TextView
+                android:id="@+id/tvRetirementGoalVal2Sub"
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"
+                android:layout_marginStart="5dp"
+                android:paddingTop="2dp"
+                android:text="   (Shortfall)"
+
+                android:textColor="@color/dark_green"
+                android:textSize="9sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toEndOf="@+id/tvRetirementGoalVal2"
+                app:layout_constraintTop_toTopOf="@+id/tvRetirementGoalVal2" />
+
+            <ImageView
+                android:id="@+id/imvManageReport"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imvGoalDetail"
+                app:layout_constraintVertical_bias="0.0"
+                tools:layout_editor_absoluteX="26dp" />
+
+            <TextView
+                android:id="@+id/tvManageReportText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="15dp"
+                android:text="Manage Report"
+                android:textColor="@color/teal"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvYourPortfolioValue"
+                app:layout_constraintTop_toBottomOf="@id/imvGoalDetail" />
+
+            <TextView
+                android:id="@+id/tvFinancialPlanningReport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+
+                android:paddingBottom="15dp"
+                android:text="Financial Planning Report"
+                android:textColor="@color/teal"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvYourPortfolioValue"
+                app:layout_constraintTop_toBottomOf="@id/tvManageReportText" />
+
+
+            <Button
+                android:id="@+id/btnEditData"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/edit_icon"
+                android:paddingBottom="10dp"
+
+                app:layout_constraintEnd_toStartOf="@+id/btnViewReport"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvFinancialPlanningReport" />
+
+            <TextView
+                android:id="@+id/tvEditDataText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:padding="2dp"
+                android:text="Edit Data"
+                android:textColor="@color/teal"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/btnEditData"
+                app:layout_constraintStart_toStartOf="@id/btnEditData"
+                app:layout_constraintTop_toBottomOf="@id/btnEditData" />
+
+            <Button
+                android:id="@+id/btnViewReport"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/eye"
+                app:layout_constraintEnd_toStartOf="@+id/btnDownloadReport"
+                app:layout_constraintStart_toEndOf="@+id/btnEditData"
+                app:layout_constraintTop_toBottomOf="@id/tvFinancialPlanningReport" />
+
+            <TextView
+                android:id="@+id/tvViewReportText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:text="View Report"
+                android:textAlignment="center"
+                android:textColor="@color/teal"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/tvDownloadReportText"
+                app:layout_constraintStart_toEndOf="@id/tvEditDataText"
+                app:layout_constraintTop_toBottomOf="@id/btnViewReport" />
+
+            <Button
+                android:id="@+id/btnDownloadReport"
+
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/download"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btnViewReport"
+                app:layout_constraintTop_toBottomOf="@id/tvFinancialPlanningReport" />
+
+            <TextView
+                android:id="@+id/tvDownloadReportText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:text="Download"
+                android:textAlignment="center"
+                android:textColor="@color/teal"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/btnDownloadReport"
+                app:layout_constraintStart_toStartOf="@id/btnDownloadReport"
+                app:layout_constraintTop_toBottomOf="@id/btnDownloadReport" />
+
+            <View
+                android:id="@+id/viewSpacerAbovePortfolio"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvEditDataText" />
+
+            <TextView
+                android:id="@+id/tvPortFolioAnalysisReport"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="15dp"
+                android:text="Portfolio Analysis Report"
+                android:textColor="@color/teal"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvYourPortfolioValue"
+                app:layout_constraintTop_toBottomOf="@id/viewSpacerAbovePortfolio" />
+
+
+            <Button
+                android:id="@+id/btnViewAnalysisReport"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/eye"
+
+                app:layout_constraintEnd_toStartOf="@+id/btnViewReport"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPortFolioAnalysisReport" />
+
+            <TextView
+                android:id="@+id/tvViewAnalysisReportText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="View Report"
+                android:textColor="@color/teal"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/btnViewAnalysisReport"
+                app:layout_constraintStart_toStartOf="@id/btnViewAnalysisReport"
+                app:layout_constraintTop_toBottomOf="@id/btnViewAnalysisReport" />
+
+            <View
+                android:id="@+id/viewBelowPortFolioAnalysis"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginVertical="10sp"
+                android:background="#e5e8e2"
+                android:padding="2dp"
+                app:layout_constraintEnd_toEndOf="@id/imvGoalForwardIcon"
+                app:layout_constraintStart_toStartOf="@id/tvManageReportText"
+                app:layout_constraintTop_toBottomOf="@id/tvViewAnalysisReportText" />
+
+            <TextView
+                android:id="@+id/tvYourScoreText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="2dp"
+                android:text="Your Score"
+                android:textColor="@color/teal"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvYourPortfolioValue"
+                app:layout_constraintTop_toBottomOf="@id/viewBelowPortFolioAnalysis" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_info_24"
+                app:layout_constraintStart_toEndOf="@id/tvYourScoreText"
+                app:layout_constraintTop_toBottomOf="@id/viewBelowPortFolioAnalysis"
+                app:tint="@color/l_green" />
+
+            <TextView
+                android:id="@+id/tvAchievedScore1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:paddingBottom="5dp"
+                android:text="69"
+                android:textColor="@color/teal"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvYourScoreText"
+                app:layout_constraintTop_toBottomOf="@id/tvYourScoreText" />
+
+            <View
+                android:id="@+id/viewBelowYourScore"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:layout_marginVertical="8dp"
+                android:background="@color/green_grey"
+                app:layout_constraintBottom_toBottomOf="@id/tvAchievedScore1"
+                app:layout_constraintEnd_toStartOf="@id/tvAchievedScore2"
+                app:layout_constraintStart_toEndOf="@id/tvAchievedScore1"
+                app:layout_constraintTop_toBottomOf="@id/tvYourScoreText" />
+
+            <TextView
+                android:id="@+id/tvAchievedScore2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:paddingBottom="5dp"
+                android:text="100"
+                android:textColor="@color/teal"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/viewBelowYourScore"
+                app:layout_constraintTop_toBottomOf="@id/tvYourScoreText" />
+
+            <ImageView
+                android:id="@+id/imvLike"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/circle"
+                app:layout_constraintBottom_toBottomOf="@id/tvAchievedScore1"
+                app:layout_constraintEnd_toEndOf="@+id/btnViewReport"
+                app:layout_constraintStart_toStartOf="@id/btnViewReport"
+                app:layout_constraintTop_toTopOf="@id/tvYourScoreText"
+                app:tint="@color/green_grey" />
+
+            <ProgressBar
+                android:id="@+id/imvLikeImageScore"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/circular_shape"
+                android:backgroundTint="@color/white"
+                android:indeterminate="false"
+                android:progress="70"
+                android:progressDrawable="@drawable/circular_progress_bar"
+                app:layout_constraintBottom_toBottomOf="@id/tvAchievedScore1"
+                app:layout_constraintEnd_toEndOf="@+id/btnViewReport"
+                app:layout_constraintStart_toStartOf="@id/btnViewReport"
+                app:layout_constraintTop_toTopOf="@id/tvYourScoreText" />
+
+            <ImageView
+                android:id="@+id/imvBottomContent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:foreground="@drawable/corners_bottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvAchievedScore1" />
+
+            <Button
+                android:id="@+id/btnLiability"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/group"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/btnViewReport"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/imvBottomContent" />
+
+
+            <TextView
+                android:id="@+id/tvLiabilities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="Liabilities"
+                android:textAlignment="center"
+                android:textColor="@color/teal"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/btnLiability"
+                app:layout_constraintStart_toStartOf="@id/btnLiability"
+                app:layout_constraintTop_toBottomOf="@id/btnLiability" />
+
+            <TextView
+                android:id="@+id/tvLiabilitiesValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:text="₹ 0.00"
+                android:textAlignment="center"
+                android:textColor="@color/teal"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/btnEditData"
+                app:layout_constraintStart_toStartOf="@id/btnEditData"
+                app:layout_constraintTop_toBottomOf="@id/tvLiabilities" />
+
+
+            <Button
+                android:id="@+id/btnNetWorth"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/rupee"
+                app:layout_constraintEnd_toEndOf="@id/btnViewReport"
+                app:layout_constraintStart_toStartOf="@id/btnViewReport"
+                app:layout_constraintTop_toTopOf="@id/imvBottomContent" />
+
+            <TextView
+                android:id="@+id/tvYourNetWorth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="Your Net Worth"
+                android:textAlignment="center"
+                android:textColor="@color/teal"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/btnNetWorth"
+                app:layout_constraintStart_toStartOf="@id/btnNetWorth"
+                app:layout_constraintTop_toBottomOf="@id/btnNetWorth" />
+
+            <TextView
+                android:id="@+id/tvYourNetWorthValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:text="₹ 0.00"
+                android:textAlignment="center"
+                android:textColor="@color/teal"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/btnNetWorth"
+                app:layout_constraintStart_toStartOf="@id/btnNetWorth"
+                app:layout_constraintTop_toBottomOf="@id/tvYourNetWorth" />
+
+
+            <Button
+                android:id="@+id/btnLifeInsurance"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/round_umbrella"
+                app:layout_constraintEnd_toEndOf="@id/btnDownloadReport"
+                app:layout_constraintStart_toStartOf="@+id/btnDownloadReport"
+                app:layout_constraintTop_toTopOf="@id/imvBottomContent" />
+
+            <TextView
+                android:id="@+id/tvLifeInsurance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="Life Insurance"
+                android:textAlignment="center"
+                android:textColor="@color/teal"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/btnLifeInsurance"
+                app:layout_constraintStart_toStartOf="@id/btnLifeInsurance"
+                app:layout_constraintTop_toBottomOf="@id/btnLifeInsurance" />
+
+            <TextView
+                android:id="@+id/tvLifeInsuranceValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:text="₹ 0.00"
+                android:textAlignment="center"
+                android:textColor="@color/teal"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/btnLifeInsurance"
+                app:layout_constraintStart_toStartOf="@id/btnLifeInsurance"
+                app:layout_constraintTop_toBottomOf="@id/tvLifeInsurance" />
+
+            <View
+                android:id="@+id/viewSpacerBelowLiabilities"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLiabilitiesValue" />
+
+            <Button
+                android:id="@+id/btnCreditCard"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/credit_card"
+                android:paddingBottom="10dp"
+                android:text="Button 1"
+                app:layout_constraintEnd_toStartOf="@+id/btnViewReport"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewSpacerBelowLiabilities" />
+
+            <TextView
+                android:id="@+id/tvCreditCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="Credit Card Score"
+                android:textAlignment="center"
+                android:textColor="@color/teal"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/tvLiabilities"
+                app:layout_constraintStart_toStartOf="@id/tvLiabilities"
+                app:layout_constraintTop_toBottomOf="@id/btnCreditCard" />
+
+            <TextView
+                android:layout_marginBottom="20dp"
+                android:id="@+id/tvCreditCardValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:text="₹ 0.00"
+                android:textAlignment="center"
+                android:textColor="@color/teal"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/imvBottomContent"
+                app:layout_constraintEnd_toEndOf="@id/btnCreditCard"
+                app:layout_constraintStart_toStartOf="@id/btnCreditCard"
+                app:layout_constraintTop_toBottomOf="@id/tvCreditCard" />
+
+            <Button
+
+                android:id="@+id/btnForm26AS"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/edit"
+                app:layout_constraintEnd_toEndOf="@id/btnNetWorth"
+                app:layout_constraintStart_toStartOf="@id/btnNetWorth"
+                app:layout_constraintTop_toBottomOf="@id/viewSpacerBelowLiabilities" />
+
+            <TextView
+                android:id="@+id/tvForm26AS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:text="Form 26AS"
+                android:textAlignment="center"
+                android:textColor="@color/teal"
+                android:textSize="11sp"
+                android:textStyle="bold"
+
+                app:layout_constraintEnd_toEndOf="@id/btnNetWorth"
+                app:layout_constraintStart_toStartOf="@id/btnNetWorth"
+                app:layout_constraintTop_toBottomOf="@id/btnForm26AS" />
+
+
+            <TextView
+                android:layout_marginBottom="20dp"
+                android:id="@+id/tvForm26ASValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="1dp"
+                android:text="₹ 0.00"
+                android:textAlignment="center"
+                android:textColor="@color/teal"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/imvBottomContent"
+                app:layout_constraintEnd_toEndOf="@id/btnNetWorth"
+                app:layout_constraintStart_toStartOf="@id/btnNetWorth"
+                app:layout_constraintTop_toBottomOf="@id/tvForm26AS" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#f7f7f7"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
