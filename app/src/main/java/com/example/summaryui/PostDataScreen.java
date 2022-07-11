@@ -1,5 +1,6 @@
 package com.example.summaryui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +20,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class PostDataScreen extends AppCompatActivity {
 
     private EditText nameEdt, jobEdt;
-    private Button postDataBtn;
+    private Button postDataBtn, getDataBtn;
     private TextView responseTV;
     private ProgressBar loadingPB;
 
@@ -31,8 +32,17 @@ public class PostDataScreen extends AppCompatActivity {
         nameEdt = findViewById(R.id.idEdtName);
         jobEdt = findViewById(R.id.idEditMessage);
         postDataBtn = findViewById(R.id.idBtnPost);
+        getDataBtn = findViewById(R.id.idBtnGet);
         responseTV = findViewById(R.id.idTVResponse);
         loadingPB = findViewById(R.id.idLoadingPB);
+
+        getDataBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent send = new Intent(PostDataScreen.this, GetDataScreen.class );
+                startActivity(send);
+            }
+        });
 
 
         postDataBtn.setOnClickListener(new View.OnClickListener() {

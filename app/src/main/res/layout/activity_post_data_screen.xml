@@ -33,6 +33,15 @@
         android:text="Send Data to API"
         android:textAllCaps="false" />
 
+    <!--button for getting the data data-->
+    <Button
+        android:id="@+id/idBtnGet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/red"
+        android:layout_margin="20dp"
+        android:text="Get Data from API"
+        android:textAllCaps="false" />
     <!--text view for displaying our API response-->
     <TextView
         android:id="@+id/idTVResponse"
