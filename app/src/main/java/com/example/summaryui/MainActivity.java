@@ -9,6 +9,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.summaryui.databinding.ActivityMainBinding;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -19,21 +21,31 @@ public class MainActivity extends AppCompatActivity {
     private TextView setPortFolioValue, setLiabilityValue,setGoalNameValue,setAchievableGoalValue,setTotalGoalValue,setCurrentValue,setShortFallValue;
     int user_id = 155123;
 
-
+    ActivityMainBinding activityMainBinding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Button b = findViewById(R.id.btnEditData);
-        setPortFolioValue = findViewById(R.id.tvPortfolioValue);
-        setLiabilityValue = findViewById(R.id.tvLiabilitiesValue);
-        setAchievableGoalValue = findViewById(R.id.tvGoalAchieved1);
-        setTotalGoalValue = findViewById(R.id.tvGoalAchieved2);
-        setGoalNameValue = findViewById(R.id.tvRetirementGoal);
-        setCurrentValue = findViewById(R.id.tvRetirementGoalVal1);
-        setShortFallValue = findViewById(R.id.tvRetirementGoalVal2);
-        b.setOnClickListener(new View.OnClickListener() {
+
+        activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        // getting our root layout in our view.
+        View view = activityMainBinding.getRoot();
+
+        // below line is to set
+        // Content view for our layout.
+        setContentView(view);
+//        setContentView(R.layout.activity_main);
+//        Button b = findViewById(R.id.btnEditData);
+
+//        setPortFolioValue = findViewById(R.id.tvPortfolioValue);
+//        setLiabilityValue = findViewById(R.id.tvLiabilitiesValue);
+//        setAchievableGoalValue = findViewById(R.id.tvGoalAchieved1);
+//        setTotalGoalValue = findViewById(R.id.tvGoalAchieved2);
+//        setGoalNameValue = findViewById(R.id.tvRetirementGoal);
+//        setCurrentValue = findViewById(R.id.tvRetirementGoalVal1);
+//        setShortFallValue = findViewById(R.id.tvRetirementGoalVal2);
+        activityMainBinding.btnEditData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, PostDataScreen.class);
@@ -68,13 +80,14 @@ public class MainActivity extends AppCompatActivity {
                 GetModel responseFromAPI = response.body();
 //                setPortFolioValue.setText(responseFromAPI.data.portfolio_value);
 
-                setPortFolioValue.setText("₹ "+responseFromAPI.data.portfolio_value.toString());
-                setAchievableGoalValue.setText(responseFromAPI.data.goalSummary.acheivable.toString());
-                setTotalGoalValue.setText(responseFromAPI.data.goalSummary.totalGoalCount.toString());
-                setGoalNameValue.setText(responseFromAPI.data.goalSummary.allGoals.get(1).goalName.toString());
-                setCurrentValue.setText("₹ "+responseFromAPI.data.goalSummary.allGoals.get(1).presentGoalValue.toString());
-                setShortFallValue.setText("₹ "+responseFromAPI.data.goalSummary.allGoals.get(1).shortFallValue.toString());
-                setLiabilityValue.setText("₹ "+responseFromAPI.data.liability_value.toString());
+//                setPortFolioValue.setText("₹ "+responseFromAPI.data.portfolio_value.toString());
+                activityMainBinding.tvPortfolioValue.setText("₹ "+responseFromAPI.data.portfolio_value.toString());
+                activityMainBinding.tvGoalAchieved1.setText(responseFromAPI.data.goalSummary.acheivable.toString());
+                activityMainBinding.tvGoalAchieved2.setText(responseFromAPI.data.goalSummary.totalGoalCount.toString());
+                activityMainBinding.tvRetirementGoal.setText(responseFromAPI.data.goalSummary.allGoals.get(1).goalName.toString());
+                activityMainBinding.tvRetirementGoalVal1.setText("₹ "+responseFromAPI.data.goalSummary.allGoals.get(1).presentGoalValue.toString());
+                activityMainBinding.tvRetirementGoalVal2.setText("₹ "+responseFromAPI.data.goalSummary.allGoals.get(1).shortFallValue.toString());
+                activityMainBinding.tvLiabilitiesValue.setText("₹ "+responseFromAPI.data.liability_value.toString());
                 System.out.println("Response From APi  ......" + responseFromAPI.data.portfolio_value);
 
             }
