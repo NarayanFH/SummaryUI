@@ -2,6 +2,7 @@ package com.example.summaryui;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 
@@ -14,7 +15,9 @@ public interface RetroFitAPI {
     //on below line we are creating a method to post our data.
     Call<DataModal> createPost(@Body DataModal dataModal);
 
-    @GET("users/2")
+    @GET()
+    Call<GetModel> getId(@Field("user_id") GetModel user_id);
 
-    Call<DataModal> getPost(@Body DataModal dataModal);
+    @POST("userflow/getsummary/")
+    Call<GetModel> getPost(@Body GetModel getModel);
 }

@@ -39,7 +39,7 @@ public class GetDataScreen extends AppCompatActivity {
                     oneHeroes[i] = myheroList.get(i).getName();
                 }
 
-                superListView.setAdapter(new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, oneHeroes));
+                superListView.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, oneHeroes));
             }
 
             @Override
