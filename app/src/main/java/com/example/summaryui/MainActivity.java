@@ -37,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
 //        setContentView(R.layout.activity_main);
 //        Button b = findViewById(R.id.btnEditData);
-
 //        setPortFolioValue = findViewById(R.id.tvPortfolioValue);
 //        setLiabilityValue = findViewById(R.id.tvLiabilitiesValue);
 //        setAchievableGoalValue = findViewById(R.id.tvGoalAchieved1);
@@ -49,6 +48,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(MainActivity.this, PostDataScreen.class);
+                startActivity(i);
+            }
+        });
+
+        activityMainBinding.btnLiability.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,AssetsFutureOptions.class);
                 startActivity(i);
             }
         });

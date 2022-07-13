@@ -6,13 +6,18 @@
         <entry key="../../Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.2359375" />
         <entry key="app/src/main/res/drawable-v24/cornersBottom.xml" value="0.1985" />
         <entry key="app/src/main/res/drawable-v24/corners_bottom.xml" value="0.1955" />
+        <entry key="app/src/main/res/drawable/butoon_corners.xml" value="0.1355" />
         <entry key="app/src/main/res/drawable/circular_progress_bar.xml" value="0.209" />
         <entry key="app/src/main/res/drawable/circular_shape.xml" value="0.209" />
         <entry key="app/src/main/res/drawable/corners.xml" value="0.2165" />
         <entry key="app/src/main/res/drawable/gradient_color.xml" value="0.1385" />
+        <entry key="app/src/main/res/drawable/spinner_layout.xml" value="0.135" />
+        <entry key="app/src/main/res/layout/activity_assets_future_options.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_blank.xml" value="0.23385416666666667" />
         <entry key="app/src/main/res/layout/activity_get_data.xml" value="0.321875" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_post_data_screen.xml" value="0.321875" />
+        <entry key="app/src/main/res/layout/spinner_layout.xml" value="0.35625" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.5615234375" />
       </map>
     </option>

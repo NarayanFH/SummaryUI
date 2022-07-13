@@ -15,4 +15,7 @@
     <color name="teal">#005164</color>
     <color name="yel_white">#f2ffe6</color>
     <color name="red">#FF0000</color>
+    <color name="red_pink">#FEF3F1</color>
+    <color name="light_grey">#f9f9f9</color>
+
 </resources>
