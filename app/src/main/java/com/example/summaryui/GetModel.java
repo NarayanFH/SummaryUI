@@ -9,7 +9,6 @@ public class GetModel {
     @SerializedName("data")
     public Data data;
 
-
     private int user_id;
 
     public int getUser_id() {

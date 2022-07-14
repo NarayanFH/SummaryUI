@@ -5,6 +5,7 @@ import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface RetroFitAPI {
 
@@ -20,4 +21,10 @@ public interface RetroFitAPI {
 
     @POST("userflow/getsummary/")
     Call<GetModel> getPost(@Body GetModel getModel);
+
+    @GET("getfpfamilydata/")
+    Call<GetFamilyModal> getFamilyDetails(@Query("parent_user_id") int parent_user_id, @Query ("fp_log_id") int fp_log_id);
+
+    @POST("getfpgoalsdata/")
+    Call<GetGoalsModal> getGoalsDetails(@Body GetGoalsModal getGoalsModal);
 }

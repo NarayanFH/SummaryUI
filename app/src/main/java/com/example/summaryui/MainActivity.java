@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
                 GetModel responseFromAPI = response.body();
 //                setPortFolioValue.setText(responseFromAPI.data.portfolio_value);
-
+                System.out.println("Response From APi  ......" + responseFromAPI.data);
 //                setPortFolioValue.setText("₹ "+responseFromAPI.data.portfolio_value.toString());
                 activityMainBinding.tvPortfolioValue.setText("₹ "+responseFromAPI.data.portfolio_value.toString());
                 activityMainBinding.tvGoalAchieved1.setText(responseFromAPI.data.goalSummary.acheivable.toString());
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<GetModel> call, Throwable t) {
 
-                setPortFolioValue.setText("Error found is : " + t.getMessage());
+//                setPortFolioValue.setText("Error found is : " + t.getMessage());
                 System.out.println("Error From APi  ......" + t.getMessage());
             }
         });

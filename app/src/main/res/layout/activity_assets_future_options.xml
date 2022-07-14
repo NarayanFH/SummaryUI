@@ -153,7 +153,7 @@ android:textSize="14sp"
                 android:layout_marginBottom="10dp"
                 android:id="@+id/spinnerInvestmentFor"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                android:layout_marginEnd="15dp"
                 app:layout_constraintEnd_toEndOf="@id/tilNameOfShare"
                 app:layout_constraintStart_toStartOf="@id/tvInvestmentFor"
@@ -410,9 +410,9 @@ android:visibility="invisible"
                 android:id="@+id/imvInfoInvestedValue"
                 app:layout_constraintTop_toBottomOf="@id/tilNoOfShares"
                 app:layout_constraintEnd_toEndOf="@id/tilInvestedValue"
-                android:src="@drawable/ic_baseline_info_24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:src="@drawable/information"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
 
                 />
 
@@ -516,9 +516,10 @@ android:visibility="invisible"
                 android:id="@+id/imvInfoCurrentValue"
                 app:layout_constraintTop_toBottomOf="@id/tilInvestedValue"
                 app:layout_constraintEnd_toEndOf="@id/tilCurrentValue"
-                android:src="@drawable/ic_baseline_info_24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+
+                android:src="@drawable/information"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
 
                 />
 
@@ -572,10 +573,10 @@ android:visibility="invisible"
                 app:layout_constraintStart_toStartOf="@id/imvInfoInvestedValue"
                 app:layout_constraintTop_toTopOf="@id/tvAutomatedLinkage"
                 app:layout_constraintEnd_toEndOf="@id/imvInfoInvestedValue"
-                android:src="@drawable/ic_baseline_info_24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
+                android:backgroundTint="@color/white"
+                android:src="@drawable/information"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
                 />
 
             <TextView
@@ -635,9 +636,9 @@ android:visibility="invisible"
                 app:layout_constraintStart_toStartOf="@id/imvInfoInvestedValue"
                 app:layout_constraintTop_toTopOf="@id/spinnerForLinkAssetToGoal"
                 app:layout_constraintEnd_toEndOf="@id/tvAutomatedLinkage"
-                android:src="@drawable/ic_baseline_info_24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:src="@drawable/information"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
 
                 />
 
