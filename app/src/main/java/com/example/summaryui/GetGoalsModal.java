@@ -7,7 +7,7 @@ import java.util.List;
 public class GetGoalsModal {
 
         @SerializedName("data")
-        public List<GetGoalsModal.dataGoalClass> dataGoal;
+        public List<dataGoalClass> dataGoal;
 
         private int user_id;
         private int fp_log_id;
@@ -16,7 +16,7 @@ public class GetGoalsModal {
             return user_id;
         }
 
-        public void set_user_id(int ser_id) {
+        public void set_user_id(int user_id) {
             this.user_id = user_id;
         }
 

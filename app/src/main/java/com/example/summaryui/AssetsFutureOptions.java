@@ -76,6 +76,7 @@ public class AssetsFutureOptions extends AppCompatActivity implements AdapterVie
         linkAssetToGoalSpinner = findViewById(R.id.spinnerForLinkAssetToGoal);
 
         getDataValues(parent_user_id, fp_log_id,user_id);
+        getGoalsValues(user_id,fp_log_id);
         mBinding.assetCategorySpinner.setOnItemSelectedListener(this);
         ArrayAdapter cat
                 = new ArrayAdapter(
@@ -136,7 +137,7 @@ public class AssetsFutureOptions extends AppCompatActivity implements AdapterVie
                 assetToGoal);
         // set simple layout resource file
         // for each item of spinner
-        cat.setDropDownViewResource(
+        linkAssetToGoalAdapter.setDropDownViewResource(
                 android.R.layout
                         .simple_spinner_dropdown_item);
         // Set the ArrayAdapter (ad) data on the
@@ -172,12 +173,10 @@ public class AssetsFutureOptions extends AppCompatActivity implements AdapterVie
 
                 List arrayElements = responseFromAPI.dataList;
                 investmentFor = new String[arrayElements.size()];
-                assetToGoal = new String[arrayElements.size()];
+
 
                 for (int i = 0; i < arrayElements.size(); i++) {
                     investmentFor[i] = responseFromAPI.dataList.get(i).relationname + " " + responseFromAPI.dataList.get(i).first_name;
-                    assetToGoal[i] =  responseFromAPI.dataList.get(i).relationname + " " + responseFromAPI.dataList.get(i).first_name;
-
                 }
                 updateItems();
 //                System.out.println("Response From APi  ......" + responseFromAPI.dataList.get(0).first_name);
@@ -191,34 +190,55 @@ public class AssetsFutureOptions extends AppCompatActivity implements AdapterVie
             }
         });
 
+    }
 
 
-        GetGoalsModal modal2 = new GetGoalsModal();
-        modal2.set_user_id(user_id);
-        modal2.setFp_log_id(fp_log_id);
+    // Goals Values
+
+    private void getGoalsValues(int user_id,int fp_log_id) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://www.fintoo.in/restapi/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        RetroFitAPI retrofitAPI = retrofit.create(RetroFitAPI.class);
+
+        GetGoalsModal modals = new GetGoalsModal();
+        modals.set_user_id(user_id);
+        modals.setFp_log_id(fp_log_id);
 
         // calling a method to create a post and passing our modal class.
-        Call<GetGoalsModal> call2 = retrofitAPI.getGoalsDetails(modal2);
+        Call<GetGoalsModal> call = retrofitAPI.getGoalsDetails(modals);
 
         // on below line we are executing our method.
-        call2.enqueue(new Callback<GetGoalsModal>() {
+        call.enqueue(new Callback<GetGoalsModal>() {
             @Override
-            public void onResponse(Call<GetGoalsModal> call2, Response<GetGoalsModal> response) {
+            public void onResponse(Call<GetGoalsModal> call, Response<GetGoalsModal> responses) {
 
                 Toast.makeText(AssetsFutureOptions.this, "Data added to API", Toast.LENGTH_SHORT).show();
 
-                GetGoalsModal responseFromAPI = response.body();
-//                setPortFolioValue.setText(responseFromAPI.data.portfolio_value);
-                System.out.println("RGoals MuUnsuUAwuasuas  ......" + responseFromAPI.dataGoal.get(0).goal_name.toString());
+                GetGoalsModal responseFromAPIs = responses.body();
+
+                System.out.println("Gooooools2 ......" + responseFromAPIs.toString());
+
+                List arrayElement = responseFromAPIs.dataGoal;
+                assetToGoal = new String[arrayElement.size()];
+
+                for (int i = 0; i < arrayElement.size(); i++) {
+                    assetToGoal[i] =  responseFromAPIs.dataGoal.get(i).goal_name;
+
+                }
+                updateGoalItems();
+                System.out.println("Gooooools ......" + responseFromAPIs.dataGoal.get(2).goal_name);
             }
+
 
             @Override
-            public void onFailure(Call<GetGoalsModal> call2, Throwable t) {
+            public void onFailure(Call<GetGoalsModal> call, Throwable t) {
 
-                System.out.println("Error From APi  ......" + t.getMessage());
+                System.out.println("Error Goools Noooo Goals APi  ......" + t.getMessage());
             }
         });
-
     }
 
     @Override
@@ -284,6 +304,23 @@ public class AssetsFutureOptions extends AppCompatActivity implements AdapterVie
         // Set the ArrayAdapter (ad) data on the
         // Spinner which binds data to spinner
         mBinding.spinnerInvestmentFor.setAdapter(investmentSpin);
+    }
+
+    public void updateGoalItems() {
+        mBinding.spinnerForLinkAssetToGoal.setOnItemSelectedListener(this);
+        ArrayAdapter linkAssetToGoalAdapter
+                = new ArrayAdapter(
+                this,
+                android.R.layout.simple_spinner_item,
+                assetToGoal);
+        // set simple layout resource file
+        // for each item of spinner
+        linkAssetToGoalAdapter.setDropDownViewResource(
+                android.R.layout
+                        .simple_spinner_dropdown_item);
+        // Set the ArrayAdapter (ad) data on the
+        // Spinner which binds data to spinner
+        mBinding.spinnerForLinkAssetToGoal.setAdapter(linkAssetToGoalAdapter);
     }
 
     @Override
